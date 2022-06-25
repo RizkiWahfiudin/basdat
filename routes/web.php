@@ -34,6 +34,8 @@ Route::view('/404', '404');
 Route::middleware(['auth'])->group(function () {
     // home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::post('/home/eventByMonth', [HomeController::class, 'eventByMonth'])->name('home.eventByMonth');
+    Route::post('/home/eventByRegion', [HomeController::class, 'eventByRegion'])->name('home.eventByRegion');
 
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::get('/profil', [ProfilController::class, 'index']);
