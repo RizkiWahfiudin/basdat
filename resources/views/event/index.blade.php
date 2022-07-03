@@ -115,6 +115,10 @@
             "fnRowCallback" : function(nRow, aData, iDisplayIndex){
                 $("td:first", nRow).html(iDisplayIndex +1);
                 return nRow;
+            },
+            "createdRow": function( row, data, dataIndex){
+                if(parseInt(data.isExpired) == 0) $(row).css("background-color", '#FFC107'); // kuning
+                if(parseInt(data.isExpired) == 1) $(row).css("background-color", '#4CAF50'); // hijau
             }
         });
     }

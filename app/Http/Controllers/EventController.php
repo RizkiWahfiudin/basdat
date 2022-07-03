@@ -88,6 +88,12 @@ class EventController extends Controller
                 $tanggal = Carbon::parse($d->tanggal);
                 return $tanggal->isoFormat('D MMM Y');
             })
+            ->addColumn('isExpired', function($d){
+                $sekarang = Carbon::now(); 
+                $tanggal = Carbon::parse($d->tanggal)->format('Y-m-d');
+                if($sekarang > $tanggal) return 0; // sudah berjalan
+                if($sekarang == $tanggal) return 1; // sedang berjalan
+            })
             ->addColumn('aksi', function ($d) {
                 $data = '';
                 if (hakAksesMenu('event', 'update')) {
@@ -100,7 +106,7 @@ class EventController extends Controller
 
                 return $data;
             })
-            ->rawColumns(['aksi','tanggal'])
+            ->rawColumns(['aksi','tanggal','isExpired'])
             ->make(true);
     }
 

@@ -42,7 +42,7 @@
 
                 <hr>
 
-                <div class="">
+                <div class="table-responsive">
                     <table class="table table-hover data-list">
                         <thead>
                             <tr>
