@@ -47,6 +47,10 @@
                     </div>
                 </div>
 
+                <div class="px-2 bg-light mt-2"><marquee class="py-1" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+                    <text style="font-weight: bold;">Jika Event Sedang Berjalan (Tanggal Event = Tanggal Sekarang), Maka Data Akan Berwarna Hijau. Jika Sudah Berjalan Maka Data Akan Berwarna Kuning</text>
+                </marquee></div>
+
                 <hr>
 
                 <div class="table-responsive">
